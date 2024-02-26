@@ -1,5 +1,5 @@
 from flask import Flask, url_for, redirect, session
-from views import views
+#from views import views
 from authlib.integrations.flask_client import OAuth
 
 app = Flask(__name__)
@@ -20,7 +20,7 @@ google = oauth.register(
 )
 
 
-app.register_blueprint(views, url_prefix="/")
+#app.register_blueprint(views, url_prefix="/")
 
 if __name__ == "__main__":
     app.run(debug=True)

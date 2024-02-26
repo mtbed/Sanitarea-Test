@@ -1,4 +1,21 @@
 from flask import Blueprint, render_template
+from app import app
+
+app.secret_key = 'secret'
+
+# oauth config
+oauth = OAuth(app)
+google = oauth.register(
+    name='google',
+    client_id='567957499957-6606sfh4orcme321shuidk5kvi6mp3as.apps.googleusercontent.com',
+    client_secret='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',
+    access_token_url='https://accounts.google.com/o/oauth2/token',
+    access_token_params=None,
+    authorize_url='https://accounts.google.com/o/oauth2/auth',
+    authorize_params=None,
+    api_base_url='https://www.googleapis.com/oauth2/v1/',
+    client_kwargs={'scope': 'openid profile email'},
+)
 
 views = Blueprint(__name__, "views")
 
