@@ -9,8 +9,8 @@ app.secret_key = 'secret'
 oauth = OAuth(app)
 google = oauth.register(
     name='google',
-    client_id='',
-    client_secret='',
+    client_id='567957499957-6606sfh4orcme321shuidk5kvi6mp3as.apps.googleusercontent.com',
+    client_secret='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',
     access_token_url='https://accounts.google.com/o/oauth2/token',
     access_token_params=None,
     authorize_url='https://accounts.google.com/o/oauth2/auth',
@@ -25,6 +25,11 @@ app.register_blueprint(views, url_prefix="/")
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+@app.route("/")
+def home():
+    email = dict(session).get('email', None)
+    return f'Hello, {email}!'
 
 
 @app.route('/login')
