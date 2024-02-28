@@ -46,4 +46,5 @@ def authorize():
     resp.raise_for_status()
     user_info = resp.json()
     # do something with the token and profile
+    session['email'] = user_info['email']
     return redirect('/')

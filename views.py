@@ -1,17 +1,17 @@
-from flask import Blueprint, render_template
+# from flask import Blueprint, render_template
 
 
 
 
 
-views = Blueprint(__name__, "views")
+# views = Blueprint(__name__, "views")
 
 
 
-@views.route("/")
-def home():
-    email = dict(session).get('email', None)
-    return f'Hello, {email}!'
+# @views.route("/")
+# def home():
+#     email = dict(session).get('email', None)
+#     return f'Hello, {email}!'
    #return render_template("index.html", name = "Joe")
 
 
