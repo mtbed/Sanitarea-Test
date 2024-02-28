@@ -22,8 +22,7 @@ google = oauth.register(
 
 #app.register_blueprint(views, url_prefix="/")
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
 
 
 @app.route("/")
@@ -48,3 +47,7 @@ def authorize():
     # do something with the token and profile
     session['email'] = user_info['email']
     return redirect('/')
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
