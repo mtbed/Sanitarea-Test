@@ -2,6 +2,7 @@ from flask import Flask, url_for, redirect, session
 #from views import views
 from authlib.integrations.flask_client import OAuth
 
+
 app = Flask(__name__)
 app.secret_key = 'secret'
 
